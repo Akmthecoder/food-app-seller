@@ -1,0 +1,152 @@
+import dependencies.Dependencies
+import dependencies.Version
+
+apply plugin: Dependencies.Plugins.ANDROID_APPLICATION
+apply plugin: Dependencies.Plugins.KOTLIN_ANDROID
+apply plugin: Dependencies.Plugins.KOTLIN_KAPT
+apply plugin: Dependencies.Plugins.KOTLIN_ANDROID_EXTENSIONS
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion Version.compileSdk
+    buildToolsVersion Version.buildTools
+
+    defaultConfig {
+        applicationId "com.android.foodieMartSeller"
+        minSdkVersion Version.minSdk
+        targetSdkVersion Version.targetSdk
+        versionCode Version.versionCode
+        versionName Version.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [crashlyticsEnabled: "true"]
+        }
+
+        debug {
+            manifestPlaceholders = [crashlyticsEnabled: "false"]
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("fitnesstracker.jks")
+            storePassword "fitnessa"
+            keyPassword "fitnessb"
+            keyAlias "fitnesstraker"
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = Version.jvmTarget
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    testOptions {
+        unitTests.includeAndroidResources = true
+        unitTests.returnDefaultValues = true
+    }
+
+    //customize generated apk name
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def versionName = variant.versionName
+            def versionCode = variant.versionCode
+            def flavorName = variant.flavorName
+            def variantName = variant.name
+            //customize your app name by using variables
+            outputFileName = "FitnessTraker-$variantName-$versionCode-${versionName}.apk"
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation Dependencies.Kotlin.kotlin_stdlib_jdk7
+
+    //Android X
+    implementation Dependencies.AndroidX.appcompat
+    implementation Dependencies.AndroidX.materialDesign
+    implementation Dependencies.AndroidX.constraintlayout
+    implementation Dependencies.AndroidX.vectordrawable
+    implementation Dependencies.AndroidX.core
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.0.0'
+    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+
+    //Testing
+    testImplementation Dependencies.Test.test_junit
+    androidTestImplementation Dependencies.Test.android_test_espresso_core
+
+    //RxJava
+    implementation Dependencies.RxJava.rxAndroid
+
+    //LifeCycle
+    implementation Dependencies.Lifecycle.lifeCycleExtension
+
+    //FireBase dependencies
+    implementation Dependencies.Firebase.analytics
+   // implementation Dependencies.Firebase.crashlytics
+
+
+    //dagger 2
+    implementation Dependencies.Dagger.dagger2
+    implementation Dependencies.Dagger.daggerAndroidSupport
+    kapt Dependencies.Dagger.compiler
+    kapt Dependencies.Dagger.processor
+
+
+    //glide
+    implementation Dependencies.Glide.glide
+    kapt Dependencies.Glide.annotationProcessor
+    kapt Dependencies.Glide.annotationCompiler
+
+    //Network
+    api Dependencies.Retrofit2.retrofit
+    api Dependencies.Retrofit2.adapterRxjava2
+    api Dependencies.Retrofit2.converterGson
+    api Dependencies.OkHttp3.okHttp3
+    api Dependencies.OkHttp3.okHttp3Intercepter
+    api Dependencies.Facebook.stethoNetwork
+
+    api Dependencies.ThirdPartiesLib.timber
+    api Dependencies.ThirdPartiesLib.jodaTime
+
+
+    //Firebase
+
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
+    implementation "androidx.activity:activity-ktx:1.4.0"
+
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.2'
+
+    implementation 'dev.shreyaspatil.MaterialDialog:MaterialDialog:2.2.2'
+
+    // Material Design Library
+    implementation 'com.google.android.material:material:1.0.0'
+
+    // Lottie Animation Library
+    implementation 'com.airbnb.android:lottie:3.3.6'
+}
+//apply plugin: "com.google.gms.google-services"

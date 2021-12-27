@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.OrderSummaryActivity">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/app_header" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/dp_16"
+        app:layout_constraintBottom_toTopOf="@id/btn_cancel"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_user_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_16"
+                app:cardCornerRadius="@dimen/dp_16"
+                app:cardElevation="@dimen/dp_4"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_mcv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_12">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/user_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:maxLines="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/sp_18"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/user_delivery_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:fontFamily="@font/poppins_medium"
+                        android:maxLines="1"
+                        android:text="Delivery Date : 12/10/2021"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/user_delivery_time"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:fontFamily="@font/poppins_medium"
+                        android:maxLines="1"
+                        android:text="Delivery Time : 12:00 PM to 4:00 PM"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/user_delivery_date" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/user_delivery_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_4"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Delivery Address : K/2, House No.814, Matachowk, Mahipalpur, New Delhi - 110037"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/user_delivery_time" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_order_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Order Items"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/mcv_user_info"
+                app:layout_constraintTop_toBottomOf="@id/mcv_user_info" />
+
+            <View
+                android:id="@+id/v1"
+                android:layout_width="256dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_4"
+                android:background="#ECECEC"
+                app:layout_constraintStart_toStartOf="@id/mcv_user_info"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_items" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_order_items"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                app:layout_constraintEnd_toEndOf="@id/mcv_user_info"
+                app:layout_constraintStart_toStartOf="@id/mcv_user_info"
+                app:layout_constraintTop_toBottomOf="@id/v1" />
+
+            <View
+                android:id="@+id/v2"
+                android:layout_width="256dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="#ECECEC"
+                app:layout_constraintStart_toStartOf="@id/mcv_user_info"
+                app:layout_constraintTop_toBottomOf="@id/rv_order_items" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_total"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Total"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_28"
+                app:layout_constraintStart_toStartOf="@id/v2"
+                app:layout_constraintTop_toBottomOf="@id/v2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_total_value"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="$ 1500.0"
+                android:textColor="@color/yellow_app"
+                android:layout_marginEnd="@dimen/dp_16"
+                android:textSize="@dimen/sp_28"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/v2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@color/text_color_red"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_delivered"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_delivered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_16"
+        android:background="@color/green_text_color"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Delivered"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

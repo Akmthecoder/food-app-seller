@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99000000"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:theme="@style/Theme.Design.Light.NoActionBar"
+    tools:ignore="MissingDefaultResource,MissingPrefix">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pin_title_textview"
+            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="Enter Your PIN"
+            android:textColor="@color/grayFAFAFA" />
+
+        <include
+            android:id="@+id/enter_mpin"
+            layout="@layout/enter_4_digit_mpin" />
+
+        <LinearLayout
+            android:id="@+id/quickButtons"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_48"
+            android:layout_marginRight="@dimen/dp_16"
+            android:layout_weight="5"
+            android:contentDescription="layout_mpin_entry_quickButtons"
+            android:orientation="vertical"
+            android:padding="@dimen/dp_12">
+
+            <LinearLayout
+                android:id="@+id/quickButtonRow1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="layout_mpin_entry_quickButtonRow1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNum1"
+                    style="@style/mpinTile"
+                    android:contentDescription="layout_mpin_entry_btnNum1"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/btnNum2"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum2"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/btnNum3"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum3"
+                    android:text="3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quickButtonRow2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:contentDescription="layout_mpin_entry_quickButtonRow2"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNum4"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum4"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/btnNum5"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum5"
+                    android:text="5" />
+
+                <Button
+                    android:id="@+id/btnNum6"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum6"
+                    android:text="6" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quickButtonRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:contentDescription="layout_mpin_entry_quickButtonRow3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnNum7"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum7"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/btnNum8"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum8"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/btnNum9"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum9"
+                    android:text="9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quickButtonRow4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:contentDescription="layout_mpin_entry_quickButtonRow4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Button
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum7"
+                    android:text="7"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btnNum0"
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:layout_weight="1"
+                    android:contentDescription="layout_mpin_entry_btnNum0"
+                    android:text="0"
+                    android:value="0" />
+
+                <Button
+                    style="@style/mpinTile"
+                    fontPath="fonts/montserrat/Montserrat-Regular.ttf"
+                    android:contentDescription="layout_mpin_entry_btnNum7"
+                    android:text="7"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp">
+    <include
+        android:id="@+id/header"
+        layout="@layout/app_header" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/dp_150"
+        android:src="@drawable/ic_logo_new"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:layout_height="@dimen/dp_150"/>
+
+    <TextView
+        android:id="@+id/tvEmailValidation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginEnd="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:fontFamily="@font/poppins"
+        android:text="Please enter the OTP which we sent to your Email Address."
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo" />
+
+
+    <LinearLayout
+        android:id="@+id/root_otp_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailValidation"
+        android:weightSum="6">
+
+        <EditText
+            android:id="@+id/otp_edit_box1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:hint="*"
+            android:inputType="number"
+            android:fontFamily="@font/poppins_semibold"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="*"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="*"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box4"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:hint="*"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box5"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:hint="*"
+            android:fontFamily="@font/poppins_semibold"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/otp_edit_box6"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="*"
+            android:background="@drawable/edittext_curve_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="30sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvOtpDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_24"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Didn't receive OTP? Resend Code"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_14"
+        android:textColorHighlight="@color/home_title_color"
+        android:textColorLink="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/root_otp_layout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_proceed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:background="@drawable/rounded_btn_corner"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Verify"
+        android:textAllCaps="false"
+        android:layout_marginTop="@dimen/dp_24"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tvOtpDetails"
+        app:layout_constraintStart_toStartOf="@+id/tvOtpDetails"
+        app:layout_constraintTop_toBottomOf="@+id/tvOtpDetails" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

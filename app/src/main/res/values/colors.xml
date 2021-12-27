@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0A8791</color>
+    <color name="colorPrimaryDark">#0A8791</color>
+    <color name="colorAccent">#0A8791</color>
+
+    <color name="grayFAFAFA">#FAFAFA</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#0E122B</color>
+
+    <color name="grayPrimary">#777777</color>
+    <color name="grayAccent">#9B9B9B</color>
+    <color name="orangeFF8C00">#FF8C00</color>
+
+    <color name="gray373737">#373737</color>
+    <color name="gray686868">#686868</color>
+    <color name="gray1A1919">#1A1919</color>
+    <color name="gray1A1919_50">#801A1919</color>
+    <color name="grayF2F2F2">#F2F2F2</color>
+
+    <color name="gray40000000">#40000000</color>
+
+    <color name="background_blue">#2465F2</color>
+    <color name="background_orange">#F85918</color>
+    <color name="auth0_header_background">#F8F8F8</color>
+
+    <color name="home_title_color">#202859</color>
+    <color name="bn_icon_color">#4D202859</color>
+
+    <color name="button_blue">#438AFE</color>
+    <color name="button_gray">#B4B4B4</color>
+    <color name="button_green">#119F72</color>
+
+    <color name="edit_text_error">#FF0000</color>
+
+    <color name="button_light_green">#92ECD0</color>
+    <color name="text_color_light_button">#005B3E</color>
+
+    <color name="switch_green_color">#00D957</color>
+    <color name="text_color_red">#FF000F</color>
+    <color name="colorLightGrey">#CDCDCD</color>
+
+    <color name="light_green_25trans">#40119F72</color>
+
+    <color name="card_color_col1">#FFEFE3</color>
+    <color name="card_color_col2">#E2EEFF</color>
+    <color name="card_color_col3">#DAF0E8</color>
+    <color name="card_bottom">#544F49</color>
+
+    <color name="light_purple_card">#663883</color>
+    <color name="dark_purple_card">#4C2166</color>
+    <color name="purple_text_color">#C08EE2</color>
+    <color name="green_text_color">#6BBBC6</color>
+    <color name="orange_progress">#F99A00</color>
+    <color name="green_progress">#F5EB50</color>
+
+    <color name="card_follow_gray">#EBEBEB</color>
+    <color name="badge_outer_green">#49D55E</color>
+    <color name="badge_outer_grey">#D1D6D1</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="gray_app">#C2C2CB</color>
+    <color name="yellow_app">#FBA83C</color>
+</resources>

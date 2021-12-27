@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mcv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_4"
+    android:padding="@dimen/dp_8"
+    app:cardCornerRadius="@dimen/dp_6"
+    app:cardElevation="@dimen/dp_4"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_cl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_feed"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_margin="@dimen/dp_6"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_logo_new"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_feed_name"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="test"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_feed"
+            app:layout_constraintTop_toTopOf="@id/iv_feed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_feed_description"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+
+            android:text="test"
+            android:textColor="@color/gray_app"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_feed_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_feed_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_feed_prize"
+            android:layout_width="0dp"
+            android:layout_height="26dp"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:text="test"
+            android:textColor="@color/yellow_app"
+            android:textSize="@dimen/sp_18"
+            app:fontFamily="@font/poppins_medium"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_feed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_feed_description"
+            app:layout_constraintTop_toBottomOf="@id/tv_feed_description" />
+
+        <!--  <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/iv_feed_add_to_cart"
+              android:layout_width="26dp"
+              android:layout_height="26dp"
+              android:layout_marginEnd="@dimen/dp_10"
+              android:scaleType="fitCenter"
+              android:src="@drawable/ic_add"
+              android:tint="@color/yellow_app"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toTopOf="@+id/tv_feed_prize" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
